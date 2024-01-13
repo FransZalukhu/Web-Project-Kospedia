@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kospedia.</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/79a5b30955.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="assets/styledaftarkos.css" />
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <nav class="navbar"></nav>
+    <!-- Navbar End -->
+
+    <!-- Form Start -->
+    <div class="wrapper">
+      <form action="/tambahkos" method="post">
+        <h1>Daftar Kos</h1>
+        <div class="input_box">
+          <input type="text" name="namakos" id="" placeholder="Nama Kos" />
+          <i class="bx bxs-user"></i>
+        </div>
+        <div class="input_box">
+          <input type="text" name="alamatkos" placeholder="Alamat Kos" />
+          <i class="bx bxs-envelope"></i>
+        </div>
+        <div class="input_box">
+          <input type="number" name="hargasewa" placeholder="Harga Sewa" />
+        </div>
+        <div class="input_box">
+          <input type="file" name="gambar" accept="image/*" />
+          <i class="bx bxs-image-add"></i>
+        </div>
+        <button type="submit" class="btn_gegabah">Daftar</button>
+      </form>
+    </div>
+    <!-- Form End -->
+
+    <!-- Feather Icons -->
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>

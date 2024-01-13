@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Pemesanan</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      h1 {
+        color: #333;
+        display: block;
+        text-align: center;
+      }
+
+      form {
+        max-width: 400px;
+        margin: 20px auto;
+        background: #f4f4f4;
+        padding: 20px;
+        border-radius: 15px;
+      }
+
+      label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      a {
+        display: block;
+        width: 55px;
+        height: 25px;
+        background: #38ad44;
+        border-radius: 7px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+        font-weight: 500;
+        padding: 10px;
+        margin: 10px auto;
+        text-decoration: none;
+        text-align: center;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-property: box-shadow, transform;
+        transition-property: box-shadow, transform;
+      }
+
+      a:hover {
+        background: #047d24;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Edit Pemesanan</h1>
+
+    <form
+      th:action="@{/pemesanan/update/{id}(id=${pemesanan.idpemesanan})}"
+      method="post"
+      th:object="${pemesanan}"
+    >
+      <label>ID:</label>
+      <input
+        type="number"
+        th:field="*{idpemesanan}"
+        readonly="readonly"
+      /><br />
+      <label>User:</label>
+      <input
+        type="text"
+        th:field="*{user.username}"
+        readonly="readonly"
+      /><br />
+      <label>Nama Kos:</label>
+      <input type="text" th:field="*{namakos}" /><br />
+      <label>Tanggal Mulai:</label>
+      <input type="date" th:field="*{tanggalmulai}" /><br />
+      <label>Tanggal Selesai:</label>
+      <input type="date" th:field="*{tanggalselesai}" /><br />
+      <button type="submit">Update</button>
+    </form>
+
+    <a href="/readpemesanan">Back</a>
+  </body>
+</html>
